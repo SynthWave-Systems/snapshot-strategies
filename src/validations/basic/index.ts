@@ -18,7 +18,7 @@ export default class extends Validation {
         this.space,
         this.params.strategies,
         this.network,
-        getProvider(this.network),
+        getProvider(),
         [this.author],
         this.snapshot || 'latest'
       );

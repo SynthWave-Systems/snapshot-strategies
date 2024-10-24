@@ -1,4 +1,4 @@
-import snapshot from '@snapshot-labs/snapshot.js';
+import snapshot from '@synthwave-systems/snapshot.js';
 import { customFetch } from '../../utils';
 
 import STAMPS from './stampsMetadata.json';
@@ -180,7 +180,7 @@ export default class extends Validation {
     if (requiredStamps.length > 0 && (!operator || operator === 'NONE'))
       throw new Error('Operator is required when selecting required stamps');
 
-    const provider = snapshot.utils.getProvider(this.network);
+    const provider = snapshot.utils.getProvider();
     const proposalTs = (await provider.getBlock(this.snapshot)).timestamp;
     const validStamps = await validateStamps(
       currentAddress,

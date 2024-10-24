@@ -85,7 +85,7 @@ export async function strategy(
       space,
       options.strategies[chain],
       chain,
-      getProvider(chain),
+      getProvider(),
       allAddresses,
       chainBlocks[chain]
     );

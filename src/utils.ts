@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch';
 import _strategies from './strategies';
-import snapshot from '@snapshot-labs/snapshot.js';
+import snapshot from '@synthwave-systems/snapshot.js';
 import { getDelegations } from './utils/delegation';
 import { getVp, getDelegations as getCoreDelegations } from './utils/vp';
 import { createHash } from 'crypto';
@@ -24,7 +24,7 @@ async function callStrategy(space, network, addresses, strategy, snapshot) {
   const score: any = await _strategies[strategy.name].strategy(
     space,
     network,
-    getProvider(network),
+    getProvider(),
     addresses,
     strategy.params,
     snapshot

@@ -31,7 +31,7 @@ export async function getVp(
   const snapshots = await getSnapshots(
     network,
     snapshot,
-    getProvider(network),
+    getProvider(),
     networks
   );
 
@@ -101,7 +101,7 @@ export async function getDelegationsOut(
 
   const id = formatBytes32String(space);
   const options = { blockTag: snapshot };
-  const multi = new Multicaller(network, getProvider(network), abi, options);
+  const multi = new Multicaller(network, getProvider(), abi, options);
   addresses.forEach((account) => {
     multi.call(`${account}.base`, DELEGATION_CONTRACT, 'delegation', [
       account,

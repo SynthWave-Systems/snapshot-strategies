@@ -30,7 +30,7 @@ export default class extends Validation {
         this.space,
         this.params.strategies,
         this.network,
-        getProvider(this.network),
+        getProvider(),
         [this.author],
         this.snapshot || 'latest'
       );
@@ -41,7 +41,7 @@ export default class extends Validation {
         .reduce((a, b: any) => a + b, 0);
       const [[totalSupply], [excludedSupply]] = await multicall(
         this.network,
-        getProvider(this.network),
+        getProvider(),
         abi,
         [
           [this.params.address, 'totalSupply', []],
